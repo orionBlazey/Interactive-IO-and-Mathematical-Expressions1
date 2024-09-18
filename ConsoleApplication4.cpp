@@ -1,26 +1,28 @@
-// Interactive IO and Mathematical Expressions.cpp : This is the Interest Earned branch
+// Interactive IO and Mathematical Expressions.cpp : This is the Ingredient Adjuster branch
 //
 
 #include <iostream>
 #include <iomanip>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-    double principal, rate, compound, interest, amount, rateCompound, finalAmount;
+    const double conversion = 0.021;
+    const double sugar = 1.5;
+    const double butter = 1;
+    const double flour = 2.75;
+    double totSugar, totButter, totFlour, cookies, ingAmount;
 
-    cout << "What is your principal (Amount in savings)? ";
-    cin >> principal;
-    cout << "What is your interest rate? ";
-    cin >> rate;
-    cout << "How many times has the interest compounded? \n";
-    cin >> compound;
+    cout << "How many cookies would you like to bake?: ";
+    cin >> cookies;
 
-    interest = rate * principal;
-    rateCompound = rate / compound;
-    amount = (1 + rate / compound);
-    finalAmount = principal * pow(amount, compound);
+    ingAmount = cookies * conversion;
+    totSugar = ingAmount * sugar;
+    totButter = ingAmount * butter;
+    totFlour = ingAmount * flour;
 
-    cout << "Interest rate: " << rate << "\nTimes compounded: " << compound << "\nPrincipal: $" << principal << "\nInterest: $" << interest << "\nAmount in savings: $" << finalAmount << "\n";
+    cout << "To bake " << cookies << " cookies, you need:\n";
+    cout << fixed << setprecision(2) << showpoint;
+    cout << totSugar << " cups of sugar\n" << totButter << " cups of butter\n" << totFlour << " cups of flour\n" << endl;
 }
