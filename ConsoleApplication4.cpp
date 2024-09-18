@@ -8,19 +8,19 @@ using namespace std;
 
 int main()
 {
-    double principal, rate, compound, interest, amount, rateCompound, finalAmount;
+    double principal, rate1, rate2, compound, interest, amount, finalAmount;
 
     cout << "What is your principal (Amount in savings)? ";
     cin >> principal;
     cout << "What is your interest rate? ";
-    cin >> rate;
-    cout << "How many times has the interest compounded? \n";
+    cin >> rate1;
+    cout << "How many times has the interest compounded? ";
     cin >> compound;
 
-    interest = rate * principal;
-    rateCompound = rate / compound;
-    amount = (1 + rate / compound);
+    rate2 = rate1 / 100;
+    interest = rate2 * principal;
+    amount = (1 + rate2 / compound);
     finalAmount = principal * pow(amount, compound);
 
-    cout << "Interest rate: " << rate << "\nTimes compounded: " << compound << "\nPrincipal: $" << principal << "\nInterest: $" << interest << "\nAmount in savings: $" << finalAmount << "\n";
+    cout << "\nInterest rate: " << rate1 << "%\nTimes compounded: " << compound << "\nPrincipal: $" << principal << "\nInterest: $" << interest << "\nAmount in savings: $" << finalAmount << "\n";
 }
